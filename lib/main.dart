@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 void main() {
   runApp(const CryptoCurrenciesListApp());
@@ -13,13 +14,24 @@ class CryptoCurrenciesListApp extends StatelessWidget {
       title: 'CryptoCurrenciesArray',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(255, 31, 31, 31),
+        dividerColor: Colors.white24,
+        listTileTheme: const ListTileThemeData(iconColor: Colors.white),
         primarySwatch: Colors.yellow,
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 20,
-            ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(255, 31, 31, 31),
+          titleTextStyle: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700)
+        ),
+        textTheme: TextTheme(
+          bodyMedium: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+            fontSize: 20,
+          ),
+          labelSmall: TextStyle(
+            color: Colors.white.withOpacity(0.6),
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+          ),
         ),
       ),
       // routes: ,
@@ -36,14 +48,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme.bodyMedium;
@@ -52,28 +56,23 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Crypto Currencies List"),
       ),
-      body: ListView.builder(
+      body: ListView.separated(
         itemCount: 10,
+        separatorBuilder: (context, index) => const Divider(),
         itemBuilder: (context, i) => ListTile(
+          leading: SvgPicture.asset(
+            "assets/svg/bitcoin_logo.svg",
+            height: 30,
+            width: 30,
+          ),
           title: Text(
             "Bitcoin",
-            // style: Theme.of(context).textTheme.bodyMedium
             style: theme,
           ),
-          subtitle: Text(
-            "2000\$",
-            style: TextStyle(
-              color: Colors.white.withOpacity(0.6),
-              fontWeight: FontWeight.w500,
-              fontSize: 14,
-            ),
-          ),
+          subtitle:
+              Text("2000\$", style: Theme.of(context).textTheme.labelSmall),
+          trailing: const Icon(Icons.arrow_forward_ios),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
