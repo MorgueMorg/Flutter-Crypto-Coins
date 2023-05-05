@@ -99,6 +99,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      sha256: ca77bd0c23e609e09a70989726295a92978589745e129c27d354e61e4070f804
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.4.1"
   http_parser:
     dependency: transitive
     description:
