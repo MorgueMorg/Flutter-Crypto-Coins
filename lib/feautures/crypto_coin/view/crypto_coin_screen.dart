@@ -79,6 +79,11 @@ class _CryptoCoinScreenState extends State<CryptoCoinScreen> {
                           title: 'Low 24 Hour',
                           value: '${coinDetails.low24Hours} \$',
                         ),
+                        const SizedBox(height: 6),
+                        _DataRow(
+                          title: 'Last Market',
+                          value: '${coinDetails.lastMarket} ',
+                        ),
                       ],
                     ),
                   ),

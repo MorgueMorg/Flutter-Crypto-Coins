@@ -9,6 +9,7 @@ class CryptoCoinDetail extends CryptoCoin {
     required this.lastUpdate,
     required this.hight24Hour,
     required this.low24Hours,
+    required this.lastMarket,
   });
 
   // TOSYMBOL
@@ -23,6 +24,8 @@ class CryptoCoinDetail extends CryptoCoin {
   // LOW24HOUR
   final double low24Hours;
 
+  final String lastMarket;
+
   @override
   List<Object> get props => super.props
     ..addAll([
@@ -30,5 +33,6 @@ class CryptoCoinDetail extends CryptoCoin {
       lastUpdate,
       hight24Hour,
       low24Hours,
+      lastMarket,
     ]);
 }

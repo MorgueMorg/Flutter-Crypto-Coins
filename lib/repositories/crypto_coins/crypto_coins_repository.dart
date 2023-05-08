@@ -40,6 +40,7 @@ class CryptoCoinsRepository implements AbstractCoinsRepository {
     final lastUpdate = usdData['LASTUPDATE'];
     final hight24Hour = usdData['HIGH24HOUR'];
     final low24Hours = usdData['LOW24HOUR'];
+    final lastMarket = usdData['LASTMARKET'];
 
     return CryptoCoinDetail(
       name: currencyCode,
@@ -49,6 +50,7 @@ class CryptoCoinsRepository implements AbstractCoinsRepository {
       lastUpdate: DateTime.fromMillisecondsSinceEpoch(lastUpdate),
       hight24Hour: hight24Hour,
       low24Hours: low24Hours,
+      lastMarket: lastMarket,
     );
   }
 }
