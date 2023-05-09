@@ -13,6 +13,7 @@ class CryptoCurrenciesListApp extends StatelessWidget {
       title: 'CryptoCurrenciesArray',
       theme: darkTheme,
       routes: routes,
+      // ? Added talker for handling navigation
       navigatorObservers: [TalkerRouteObserver(GetIt.I<Talker>())],
     );
   }
