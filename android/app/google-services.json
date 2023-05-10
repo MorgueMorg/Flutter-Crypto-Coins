@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "132449855961",
+    "project_id": "crypto-list-array",
+    "storage_bucket": "crypto-list-array.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132449855961:android:0185d7fdc0a096a11711c8",
+        "android_client_info": {
+          "package_name": "com.cryptomorg.crypto_coins_array"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132449855961-bdp9ihimog8gt5o5ibcgt3us8c2ifb83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3ovCMshB5_jJkjlkRQr7oTrw5VxMyYqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132449855961-bdp9ihimog8gt5o5ibcgt3us8c2ifb83.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
