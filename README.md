@@ -23,19 +23,22 @@
 
 1. Clone the repo
    ```sh
-   git@github.com:MorgueMorg/Flutter-Weather-App.git
+   git@github.com:MorgueMorg/Flutter-Crypto-Coins.git
    ```
    or
    ```sh
-   https://github.com/MorgueMorg/Flutter-Weather-App.git
+   https://github.com/MorgueMorg/Flutter-Crypto-Coins.git
    ```
    
 2. Install all the packages by typing
    ```sh
    flutter pub get
    ```
-   ```
+   
 3. Run the App
+   ```sh
+   flutter run
+   ```
 
 <h2 align="center"> Info </h2>
 
