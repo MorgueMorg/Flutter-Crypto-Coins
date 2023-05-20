@@ -16,5 +16,5 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-| ![screen1](/assets/crypto_list_screen.png) | ![screen2](/assets/crypto_coin_screen.png) | ![screen3](/assets/talker_screen.png) |
+| ![screen1](/assets/results/crypto_list_screen.png) | ![screen2](/assets/results/crypto_coin_screen.png) | ![screen3](/assets/results/talker_screen.png) |
 | :------------: | :------------: | :------------: |
