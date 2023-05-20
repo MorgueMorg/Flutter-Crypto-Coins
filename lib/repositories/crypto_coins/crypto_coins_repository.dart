@@ -52,6 +52,17 @@ class CryptoCoinsRepository implements AbstractCoinsRepository {
 
   @override
   Future<CryptoCoin> getCoinDetails(String currencyCode) async {
+    try {
+      final coin = await _fetchCoinDetailsFromApi(currencyCode);
+      cryptoCoinsBox.put(currencyCode, coin);
+      return coin;
+    } catch (e, st) {
+      GetIt.instance<Talker>().handle(e, st);
+      return cryptoCoinsBox.get(currencyCode)!;
+    }
+  }
+
+  Future<CryptoCoin> _fetchCoinDetailsFromApi(String currencyCode) async {
     final response = await dio.get(
         'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=$currencyCode&tsyms=USD');
 
