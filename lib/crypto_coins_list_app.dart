@@ -19,6 +19,7 @@ class _CryptoCurrenciesListAppState extends State<CryptoCurrenciesListApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'CryptoCurrenciesArray',
       theme: darkTheme,
       routerConfig: _appRouter.config(
