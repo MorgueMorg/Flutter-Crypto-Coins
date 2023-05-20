@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 import 'package:talker_dio_logger/talker_dio_logger.dart';
 import 'package:talker_flutter/talker_flutter.dart';
@@ -22,6 +23,16 @@ void main() async {
   GetIt.I.registerSingleton(talker);
   // Talker for debug mode
   GetIt.I<Talker>().debug('Talker started...');
+
+  // Initialize Hive database
+  await Hive.initFlutter();
+
+  const cryptoCoinsBoxName = 'crypto_coins_box';
+
+  Hive.registerAdapter(CryptoCoinAdapter());
+  Hive.registerAdapter(CryptoCoinDetailAdapter());
+
+  final cryptoCoinsBox = await Hive.openBox<CryptoCoin>(cryptoCoinsBoxName);
 
   // Firebase init
   final app = await Firebase.initializeApp(
@@ -48,12 +59,12 @@ void main() async {
   );
 
   GetIt.I.registerLazySingleton<AbstractCoinsRepository>(
-    () => CryptoCoinsRepository(dio: dio),
+    () => CryptoCoinsRepository(dio: dio, cryptoCoinsBox: cryptoCoinsBox),
   );
 
   // Handler for layout (flutterError method override for talker)
-  FlutterError.onError =
-      (details) => GetIt.I<Talker>().handle(details.exception, details.stack);
+  // FlutterError.onError =
+  //     (details) => GetIt.I<Talker>().handle(details.exception, details.stack);
 
   // Handler for bloc failure and others failure
   runZonedGuarded(
