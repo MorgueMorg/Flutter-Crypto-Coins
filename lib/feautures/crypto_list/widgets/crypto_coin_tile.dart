@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:crypto_coins_array/repositories/models/crypto_coin.dart';
+import 'package:crypto_coins_array/router/router.dart';
 import 'package:flutter/material.dart';
 
 class CryptoCoinTile extends StatelessWidget {
@@ -28,10 +30,11 @@ class CryptoCoinTile extends StatelessWidget {
         //     builder: (context) => CryptoCoinScreen(),
         //   ),
         // );
-        Navigator.of(context).pushNamed(
-          "/coin",
-          arguments: coin,
-        );
+        // Navigator.of(context).pushNamed(
+        //   "/coin",
+        //   arguments: coin,
+        // );
+        AutoRouter.of(context).push(CryptoCoinRoute(coin: coin));
       },
     );
   }
