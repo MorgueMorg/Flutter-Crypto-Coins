@@ -2,7 +2,7 @@
 
 <p align="center"> A simple flutter crypto application that parses data from the api site https://min-api.cryptocompare.com/documentation. Can log errors and events, can work without network using local database Hive. </p>
 
-<h2 align="center"> Priview </h2>
+<h2 align="center"> Preview </h2>
 
 | ![screen1](/assets/results/crypto_list_screen.png) | ![screen2](/assets/results/crypto_coin_screen.png) | ![screen3](/assets/results/talker_screen.png) |
 | :------------: | :------------: | :------------: |
